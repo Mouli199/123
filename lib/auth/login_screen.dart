@@ -33,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
     emailController = TextEditingController();
     passwordController = TextEditingController();
-    emailController.text = "saimouli@gmail.com";
+    emailController.text = "saicharan@gmail.com";
     passwordController.text = "123456";
   }
 
@@ -61,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                //Logo koymak istenirse diye bıraktım.
+
                 Hero(
                   tag: 'logo ',
                   child: Container(
@@ -103,8 +103,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 17.0,
                 ),
                 RoundedButton(
-                  title: 'GİRİŞ',
-                  colour: Colors.orange,
+                  title: 'LOGIN',
+                  colour: Colors.blue,
                   onPressed: () async {
                     try {
                       final user = (await FirebaseAuth.instance
@@ -113,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   password: passwordController.text.trim()))
                           .user;
                       if (user != null) {
-                        _showSnackBar("Başarılı", Colors.green);
+                        _showSnackBar("Successful", Colors.green);
 
                         Navigator.pushAndRemoveUntil(
                           context,

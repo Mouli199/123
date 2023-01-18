@@ -8,9 +8,6 @@ import '../model/food.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-// import 'package:rating_bar/rating_bar.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:cloud_firestone/cloud_firestone.dart';
 
 // ignore: must_be_immutable
 class DetailPage extends StatefulWidget {
@@ -90,10 +87,6 @@ class _DetailPageState extends State<DetailPage> {
                               return SizedBox();
                             }
                           })
-                      // Text(
-                      //   ' ${widget.yemek.star_rate}.0 / 5.0',
-                      //   style: Theme.of(context).textTheme.subtitle1,
-                      // ),
                     ],
                   ),
                 )
@@ -102,7 +95,7 @@ class _DetailPageState extends State<DetailPage> {
                 height: 10,
               ),
               TextS(
-                name: "MALZEMELER",
+                name: "MATERIALS",
               ),
               Text(
                 widget.food.Material,
@@ -112,7 +105,7 @@ class _DetailPageState extends State<DetailPage> {
                 height: 10,
               ),
               TextS(
-                name: "TARİFİ",
+                name: "RECIPE",
               ),
               Text(widget.food.Rates),
               SizedBox(

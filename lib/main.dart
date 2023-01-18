@@ -17,23 +17,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-     // routes: {"mainPage": (context) => CategoriesFull(refCategories: null,),},
       theme: ThemeData(
         primarySwatch: Colors.orange,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Anasayfa(),
+      home: Homepage(),
     );
   }
 }
 
-class Anasayfa extends StatefulWidget {
+class Homepage extends StatefulWidget {
   @override
-  _AnasayfaState createState() => _AnasayfaState();
+  _HomepageState createState() => _HomepageState();
 }
 
-class _AnasayfaState extends State<Anasayfa> {
-  var refKategoriler = FirebaseDatabase.instance.ref().child("Kategori");
+class _HomepageState extends State<Homepage> {
+  var refCategories = FirebaseDatabase.instance.ref().child("Category");
 
   @override
   Widget build(BuildContext context) {
@@ -48,10 +47,3 @@ class _AnasayfaState extends State<Anasayfa> {
     );
   }
 }
-
-/* Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text("Kategoriler")),
-      ),
-      body: CategoriesPage(refKategoriler: refKategoriler),
-    );*/
